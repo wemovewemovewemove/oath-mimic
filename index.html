@@ -29,8 +29,7 @@
       width: 100%;
     }
 
-    header img,
-    footer img {
+    header img {
       display: block;
     }
 
@@ -134,35 +133,44 @@
       background-color: rgb(17, 18, 22);
     }
 
-    .footer-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 2rem;
+    .footer-container {
+      max-width: 960px;
+      margin: 0 auto;
     }
 
-    .footer-links {
+    .MuiGrid-root {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .MuiGrid-container {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
       font-size: 13px;
     }
 
-    .footer-links a {
+    .MuiGrid-item {
+      flex-grow: 1;
+    }
+
+    .MuiTypography-root {
       color: #999;
       text-decoration: none;
     }
 
-    .footer-links span {
-      color: #999;
+    .MuiGrid-root img {
+      max-width: 124px;
+      height: auto;
     }
 
-    .footer-copyright {
+    .MuiGrid-container.css-1njkcha-Grid-root-copyright {
       font-size: 12px;
       color: #777;
       margin-top: 1rem;
-      max-width: 800px;
     }
   </style>
 </head>
@@ -187,24 +195,26 @@
   </main>
 
   <footer>
-    <div class="footer-grid">
-      <div>
-        <img src="https://authorize.roblox.com/assets/logo/global_logo_white.svg" width="124" height="21.52" alt="logo" />
-      </div>
-      <div>
-        <div class="footer-links">
-          <a href="https://corp.roblox.com/" target="_blank">About Us</a>
-          <span>|</span>
-          <a href="https://corp.roblox.com/careers/" target="_blank">Join Us</a>
-          <span>|</span>
-          <a href="https://en.help.roblox.com/hc/en-us/articles/115004647846-Roblox-Terms-of-Use" target="_blank">Terms</a>
-          <span>|</span>
-          <a href="https://en.help.roblox.com/hc/en-us/articles/115004630823-Roblox-Privacy-and-Cookie-Policy-" target="_blank">Privacy</a>
-          <span>|</span>
-          <a href="https://www.roblox.com/info/accessibility" target="_blank">Accessibility</a>
+    <div class="footer-container">
+      <div class="MuiGrid-root MuiGrid-container">
+        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-auto css-1o1b8p-Grid-root-logo">
+          <img src="https://authorize.roblox.com/assets/logo/global_logo_white.svg" alt="logo" width="124" height="21.52">
         </div>
-        <div class="footer-copyright">
-          ©2025 Roblox Corporation. Roblox, the Roblox logo and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.
+        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 css-12jpqt6-Grid-root">
+          <div class="MuiGrid-root MuiGrid-container MuiGrid-item css-1e5a888-Grid-root-externalLinks">
+            <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-gjcsa4-Link-colorPrimary-Link-root" href="https://corp.roblox.com/" target="_blank"><span class="MuiTypography-root MuiTypography-inherit css-zl9cle-Typography-root-Typography-body2-Typography-colorSecondary">About Us</span></a>
+            <span class="css-rtgaaj-linkDivider">|</span>
+            <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-gjcsa4-Link-colorPrimary-Link-root" href="https://corp.roblox.com/careers/" target="_blank"><span class="MuiTypography-root MuiTypography-inherit css-zl9cle-Typography-root-Typography-body2-Typography-colorSecondary">Join Us</span></a>
+            <span class="css-rtgaaj-linkDivider">|</span>
+            <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-gjcsa4-Link-colorPrimary-Link-root" href="https://en.help.roblox.com/hc/en-us/articles/115004647846-Roblox-Terms-of-Use" target="_blank"><span class="MuiTypography-root MuiTypography-inherit css-zl9cle-Typography-root-Typography-body2-Typography-colorSecondary">Terms</span></a>
+            <span class="css-rtgaaj-linkDivider">|</span>
+            <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-gjcsa4-Link-colorPrimary-Link-root" href="https://en.help.roblox.com/hc/en-us/articles/115004630823-Roblox-Privacy-and-Cookie-Policy-" target="_blank"><span class="MuiTypography-root MuiTypography-inherit css-zl9cle-Typography-root-Typography-body2-Typography-colorSecondary">Privacy</span></a>
+            <span class="css-rtgaaj-linkDivider">|</span>
+            <a class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineHover css-gjcsa4-Link-colorPrimary-Link-root" href="https://www.roblox.com/info/accessibility" target="_blank"><span class="MuiTypography-root MuiTypography-inherit css-zl9cle-Typography-root-Typography-body2-Typography-colorSecondary">Accessibility</span></a>
+          </div>
+          <div class="MuiGrid-root MuiGrid-container MuiGrid-item css-1njkcha-Grid-root-copyright">
+            <span class="MuiTypography-root MuiTypography-inherit css-zl9cle-Typography-root-Typography-body2-Typography-colorSecondary">©2025 Roblox Corporation. Roblox, the Roblox logo and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.</span>
+          </div>
         </div>
       </div>
     </div>
